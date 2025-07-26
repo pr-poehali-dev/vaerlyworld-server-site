@@ -18,7 +18,14 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'sans': ['Open Sans', 'system-ui', 'sans-serif'],
+				'heading': ['Montserrat', 'system-ui', 'sans-serif'],
+			},
 			colors: {
+				'minecraft-green': '#2ECC71',
+				'minecraft-blue': '#3498DB',
+				'minecraft-purple': '#9B59B6',
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
