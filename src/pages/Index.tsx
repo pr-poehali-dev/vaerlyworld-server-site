@@ -47,6 +47,70 @@ const Index = () => {
     { label: 'Версия', value: '1.20.4', icon: 'Code' }
   ];
 
+  const donatePacks = [
+    {
+      name: 'Новичок',
+      price: 99,
+      color: 'from-gray-400 to-gray-600',
+      icon: 'User',
+      features: [
+        'Приватная территория 16x16',
+        'Набор начальных инструментов',
+        'Защита от гриферов',
+        'Доступ к /kit starter'
+      ],
+      popular: false
+    },
+    {
+      name: 'Житель',
+      price: 299,
+      color: 'from-minecraft-green to-emerald-600',
+      icon: 'Home',
+      features: [
+        'Приватная территория 32x32',
+        'Телепортация /home (3 точки)',
+        'Набор алмазных инструментов',
+        'Доступ к /kit premium',
+        'Цветной ник в чате',
+        'Приоритет входа на сервер'
+      ],
+      popular: true
+    },
+    {
+      name: 'Мастер',
+      price: 599,
+      color: 'from-minecraft-blue to-blue-700',
+      icon: 'Hammer',
+      features: [
+        'Приватная территория 64x64',
+        'Телепортация /home (5 точек)',
+        'Набор зачарованных инструментов',
+        'Доступ к /kit master',
+        'Возможность летать в привате',
+        'Доступ к креативному режиму',
+        'Создание магазинов'
+      ],
+      popular: false
+    },
+    {
+      name: 'Легенда',
+      price: 999,
+      color: 'from-minecraft-purple to-purple-700',
+      icon: 'Crown',
+      features: [
+        'Приватная территория 128x128',
+        'Неограниченные /home точки',
+        'Набор эксклюзивных предметов',
+        'Доступ ко всем /kit',
+        'Полёт по всему серверу',
+        'Креативный режим везде',
+        'Доступ к админ-командам',
+        'Эксклюзивная роль в Discord'
+      ],
+      popular: false
+    }
+  ];
+
   const navigation = [
     { name: 'Главная', href: '#', active: true },
     { name: 'Правила', href: '#rules' },
@@ -152,6 +216,75 @@ const Index = () => {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Donate Section */}
+      <section id="donate" className="py-20 bg-black/20 backdrop-blur-lg">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="font-heading text-4xl font-bold text-white mb-4">
+              Поддержать сервер
+            </h2>
+            <p className="text-xl text-white/80 max-w-2xl mx-auto">
+              Выберите подходящий донат-пакет и получите эксклюзивные возможности на сервере
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {donatePacks.map((pack, index) => (
+              <Card 
+                key={index} 
+                className={`relative bg-white/10 backdrop-blur-lg border-white/20 hover:bg-white/15 transition-all hover:scale-105 overflow-hidden ${
+                  pack.popular ? 'ring-2 ring-minecraft-green scale-105' : ''
+                }`}
+              >
+                {pack.popular && (
+                  <div className="absolute top-0 right-0 bg-minecraft-green text-white px-3 py-1 text-sm font-semibold">
+                    Популярный
+                  </div>
+                )}
+                
+                <CardHeader className="text-center pb-4">
+                  <div className={`w-20 h-20 bg-gradient-to-r ${pack.color} rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg`}>
+                    <Icon name={pack.icon} size={40} className="text-white" />
+                  </div>
+                  <CardTitle className="text-white font-heading text-xl">{pack.name}</CardTitle>
+                  <div className="text-center">
+                    <span className="text-3xl font-bold text-white">{pack.price}₽</span>
+                    <span className="text-white/60 text-sm block">одноразово</span>
+                  </div>
+                </CardHeader>
+                
+                <CardContent className="space-y-3">
+                  {pack.features.map((feature, featureIndex) => (
+                    <div key={featureIndex} className="flex items-start space-x-2">
+                      <Icon name="Check" size={16} className="text-minecraft-green mt-1 flex-shrink-0" />
+                      <span className="text-white/90 text-sm">{feature}</span>
+                    </div>
+                  ))}
+                  
+                  <Button 
+                    className={`w-full mt-6 bg-gradient-to-r ${pack.color} hover:opacity-90 text-white font-semibold`}
+                  >
+                    <Icon name="CreditCard" size={16} className="mr-2" />
+                    Купить
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <div className="bg-white/10 backdrop-blur-lg rounded-lg p-6 max-w-2xl mx-auto">
+              <Icon name="Shield" size={32} className="text-minecraft-green mx-auto mb-4" />
+              <h3 className="font-heading text-xl text-white mb-2">Безопасная оплата</h3>
+              <p className="text-white/80">
+                Все платежи обрабатываются через защищённые системы. 
+                Привилегии активируются автоматически в течение 5 минут.
+              </p>
+            </div>
           </div>
         </div>
       </section>
