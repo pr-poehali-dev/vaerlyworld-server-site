@@ -49,15 +49,16 @@ const Index = () => {
 
   const donatePacks = [
     {
-      name: 'Новичок',
-      price: 99,
+      name: 'Мидл',
+      price: 149,
       color: 'from-gray-400 to-gray-600',
       icon: 'User',
       features: [
-        'Приватная территория 16x16',
-        'Набор начальных инструментов',
+        'Приватная территория 24x24',
+        'Набор железных инструментов',
         'Защита от гриферов',
-        'Доступ к /kit starter'
+        'Доступ к /kit middle',
+        'Телепортация /spawn'
       ],
       popular: false
     },
@@ -106,6 +107,41 @@ const Index = () => {
         'Креативный режим везде',
         'Доступ к админ-командам',
         'Эксклюзивная роль в Discord'
+      ],
+      popular: false
+    },
+    {
+      name: 'Кракен',
+      price: 1499,
+      color: 'from-indigo-600 to-purple-800',
+      icon: 'Waves',
+      features: [
+        'Приватная территория 256x256',
+        'Безлимитные /home точки',
+        'Все возможности Легенды',
+        'Уникальные эффекты частиц',
+        'Доступ к эксклюзивным мирам',
+        'Создание собственных команд',
+        'Модерские права в чате',
+        'Особая роль [КРАКЕН] в игре'
+      ],
+      popular: false
+    },
+    {
+      name: 'Zeus',
+      price: 2499,
+      color: 'from-yellow-400 to-orange-600',
+      icon: 'Zap',
+      features: [
+        'Приватная территория 512x512',
+        'Все возможности Кракена',
+        'Молнии по команде /lightning',
+        'Телепортация к любому игроку',
+        'Бессмертие на сервере',
+        'Управление погодой',
+        'Кастомные заклинания',
+        'Божественная роль [ZEUS]',
+        'Личный остров в небесах'
       ],
       popular: false
     }
@@ -232,7 +268,7 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {donatePacks.map((pack, index) => (
               <Card 
                 key={index} 
