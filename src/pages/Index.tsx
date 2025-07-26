@@ -50,7 +50,7 @@ const Index = () => {
   const donatePacks = [
     {
       name: 'Мидл',
-      price: 149,
+      price: 99,
       color: 'from-gray-400 to-gray-600',
       icon: 'User',
       features: [
@@ -64,7 +64,7 @@ const Index = () => {
     },
     {
       name: 'Житель',
-      price: 299,
+      price: 199,
       color: 'from-minecraft-green to-emerald-600',
       icon: 'Home',
       features: [
@@ -79,7 +79,7 @@ const Index = () => {
     },
     {
       name: 'Мастер',
-      price: 599,
+      price: 399,
       color: 'from-minecraft-blue to-blue-700',
       icon: 'Hammer',
       features: [
@@ -95,7 +95,7 @@ const Index = () => {
     },
     {
       name: 'Легенда',
-      price: 999,
+      price: 699,
       color: 'from-minecraft-purple to-purple-700',
       icon: 'Crown',
       features: [
@@ -112,7 +112,7 @@ const Index = () => {
     },
     {
       name: 'Кракен',
-      price: 1499,
+      price: 999,
       color: 'from-indigo-600 to-purple-800',
       icon: 'Waves',
       features: [
@@ -129,7 +129,7 @@ const Index = () => {
     },
     {
       name: 'Zeus',
-      price: 2499,
+      price: 1599,
       color: 'from-yellow-400 to-orange-600',
       icon: 'Zap',
       features: [
